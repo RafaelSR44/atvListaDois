@@ -259,26 +259,14 @@ Implemente um pseudocódigo que receba o valor total da compra e exiba a classif
 
 Resposta:
 
-```javascript
-
-function calcularFrete(preco){
-    if(preco < 50){
-      console.log("Frete não disponível!")
-    }
-    if(preco >= 50 && preco < 200){
-      console.log("Frete com custo adiconal!")
-    }
-    if(preco >= 200){
-      console.log("Frete grátis!")
-    }
-}
-
-calcularFrete(10);  //Frete não disponível!
-calcularFrete(50);  //Frete com custo adiconal!
-calcularFrete(100); //Frete com custo adiconal!
-calcularFrete(200); //Frete grátis!
-calcularFrete(250); //Frete grátis!
-
+```
+função caluclarFrete (preço)
+  se o preço for menor que 50
+    "Frete não disponível!"
+  então se o preço for maior ou igual e menor que 200
+    "Frete com custo adiconal!"
+  então se o preço for maior ou igual que 200
+    "Frete grátis!"
 ```
 ______
 
@@ -297,6 +285,40 @@ Método CalcularConsumo():
 ```
 Implementação genérica para cálculo de consumo, a ser sobrescrita pelas subclasses.
 Agora, implemente as classes Carro e Moto, garantindo que ambas herdem de Veiculo e possuam métodos específicos para calcular o consumo de combustível com base na quilometragem e eficiência do veículo.
+
+Resposta:
+
+```
+Classe Carro herda Veiculo: 
+Atributos:
+Veiculo.modelo
+Veiculo.ano
+distânciaPercorrida
+eficiência
+consumo
+
+Método Construtor(modelo, ano, distanciaPercorrida, eficiencia):
+
+Puxa os valores dos atributos modelo e ano da classe Veiculo e define os calores dos atributos distânciaPercorida e eficiência com os valores passados como parâmetro.
+
+Método CalcularConsumo():
+A razão entre distânciaPercorrida e eficiência sendo atribuida ao consumo
+
+Classe Moto herda Veiculo: 
+Atributos:
+Veiculo.modelo
+Veiculo.ano
+distânciaPercorrida
+eficiência
+consumo
+
+Método Construtor(modelo, ano, distanciaPercorrida, eficiencia):
+
+Puxa os valores dos atributos modelo e ano da classe Veiculo e define os calores dos atributos distânciaPercorida e eficiência com os valores passados como parâmetro.
+
+Método CalcularConsumo():
+A razão entre distânciaPercorrida e eficiência sendo atribuida ao consumo
+```
 ______
 
 **9)** Você é um cientista da NASA e está ajudando no desenvolvimento de um sistema de pouso para sondas espaciais em Marte. Seu objetivo é calcular o tempo necessário para que a sonda reduza sua velocidade até um nível seguro para pouso, considerando uma velocidade inicial de entrada na atmosfera marciana e uma taxa de desaceleração constante causada pelo atrito atmosférico e retrofoguetes.
