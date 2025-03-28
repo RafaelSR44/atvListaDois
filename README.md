@@ -332,6 +332,37 @@ Considere a fórumla de atualização velocidade:
     velocidade = velocidadeInicial - desaceleracao * tempo
 ```
 Seu programa deve determinar quanto tempo será necessário para que a sonda atinja uma velocidade segura de pouso, sem ultrapassar os limites estabelecidos.
+
+```
+  INICIO
+    // Definir variáveis de entrada
+    velocidadeInicial <- INPUT("Digite a velocidade inicial da sonda (m/s): ")
+    velocidadeSegura <- INPUT("Digite a velocidade segura para pouso (m/s): ")
+    desaceleracao <- INPUT("Digite a taxa de desaceleração (m/s²): ")
+    tempoMaximo <- INPUT("Digite o tempo máximo permitido para descida (s): ")
+    
+    // Inicializar variável de tempo
+    tempo <- 0
+
+    // Verificar se a desaceleração é válida
+    SE desaceleracao <= 0 ENTAO
+        EXIBIR "Erro: A desaceleração deve ser maior que zero."
+        SAIR
+
+    // Calcular o tempo necessário para atingir a velocidade segura
+    tempoNecessario <- (velocidadeInicial - velocidadeSegura) / desaceleracao
+
+    // Verificar se o tempo necessário ultrapassa o tempo máximo permitido
+    SE tempoNecessario > tempoMaximo ENTAO
+        EXIBIR "Aviso: O tempo necessário excede o limite permitido. Ajuste os parâmetros."
+    SENAO SE tempoNecessario < 0 ENTAO
+        EXIBIR "Erro: A velocidade segura já foi atingida ou os valores fornecidos são inválidos."
+    SENAO
+        EXIBIR "Tempo necessário para atingir velocidade segura: ", tempoNecessario, " segundos."
+FIM
+
+```
+
 ______
 
 **10)** Em um sistema de análise financeira, as operações de investimento de uma empresa podem ser representadas por matrizes, onde cada linha representa um tipo de investimento e cada coluna representa um período de tempo.
@@ -364,3 +395,33 @@ Escrever("Total de investimentos acumulados:")
 ImprimirMatriz(totalInvestimentos)  
 ```
 Agora, implemente a função MultiplicarMatrizesInvestimento(matrizA, matrizB), que multiplica as duas matrizes, simulando o efeito de diferentes fatores de crescimento e impacto financeiro nos investimentos ao longo do tempo.
+
+
+```
+  Função MultiplicarMatrizesInvestimento(matrizA, matrizB): 
+
+    Se tamanho(matrizA[0]) ≠ tamanho(matrizB) então:  
+        Retornar "As matrizes não podem ser multiplicadas. Dimensões incompatíveis."  
+    Senão:  
+        linhasA <- tamanho(matrizA)  
+        colunasA <- tamanho(matrizA[0])  
+        colunasB <- tamanho(matrizB[0])  
+        matrizResultado <- novaMatriz(linhasA, colunasB)  
+
+
+        Para i de 0 até linhasA-1 faça:  
+            Para j de 0 até colunasB-1 faça:  
+                matrizResultado[i][j] <- 0  
+                Para k de 0 até colunasA-1 faça:  
+                    matrizResultado[i][j] <- matrizResultado[i][j] + (matrizA[i][k] * matrizB[k][j])  
+
+        Retornar matrizResultado  
+
+
+investimentos <- [[1000, 2000], [1500, 2500]]  
+fatoresCrescimento <- [[1.1, 0.9], [1.2, 1.3]]  
+
+resultadoInvestimentos <- MultiplicarMatrizesInvestimento(investimentos, fatoresCrescimento)  
+Escrever("Impacto dos investimentos ao longo do tempo:")  
+ImprimirMatriz(resultadoInvestimentos)  
+
