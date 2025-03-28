@@ -333,6 +333,8 @@ Considere a fórumla de atualização velocidade:
 ```
 Seu programa deve determinar quanto tempo será necessário para que a sonda atinja uma velocidade segura de pouso, sem ultrapassar os limites estabelecidos.
 
+Resposta
+
 ```
   INICIO
     // Definir variáveis de entrada
@@ -396,6 +398,7 @@ ImprimirMatriz(totalInvestimentos)
 ```
 Agora, implemente a função MultiplicarMatrizesInvestimento(matrizA, matrizB), que multiplica as duas matrizes, simulando o efeito de diferentes fatores de crescimento e impacto financeiro nos investimentos ao longo do tempo.
 
+Resposta
 
 ```
   Função MultiplicarMatrizesInvestimento(matrizA, matrizB): 
